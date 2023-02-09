@@ -16,8 +16,17 @@ Unreleased
 
 *
 
-[0.1.0] - 2023-02-09
+[0.1.0] - 2023-??-??
 ********************
+
+Port from Nutmeg-RG
+===================
+
+* fix: main page course listing by Eugene Dyudyunov
+
+  * should be swept out in Palm release if upstream PR
+    `edx-platform #30954 <https://github.com/openedx/edx-platform/pull/30954>`_
+    is merged.
 
 Added
 =====
