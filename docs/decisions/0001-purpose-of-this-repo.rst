@@ -19,30 +19,56 @@ Status
 Context
 *******
 
-TODO: Add context of what led to the creation of this repo.
+Currently, RG OeX contains all required changes in the GitLab fork of the
+upstream repository. The RG's are collected over the upstream named releases
+branches. All customisations, fixes, enhancements, are proposed to the upstream,
+but the pace they lands is pretty slow, so there are some changes that differ
+RG OeX from vanilla.
+
+The code hat has some pain consequences in the development process. The commit
+history of RG's code hat is rewritten every time synchronization with the
+upstream repository occurs. Sub-releases to the main RG OeX versions has the
+same side-effect to the Delivery projects that are forked from the RG OeX
+Products.
+
+The goal is to make the layer of the RG customizations in RG OeX as thin as
+possible.
 
 .. This section describes the forces at play, including technological, political, social, and project local. These forces are probably in tension, and should be called out as such. The language in this section is value-neutral. It is simply describing facts.
 
 Decision
 ********
 
-We will create a repository...
+To go ahead with the installable Open edX Plugin which is collects all (almost
+all) RG refinements on permanent or temporary manner.
 
-TODO: Clearly state how the context above led to the creation of this repo.
+The functions, class methods and even classes could be overriden in OeX with
+the help of `@pluggable_override` decorator (changes with decorating are required
+to the RG OeX).
+
+The classes used by the Open edX as Enum, dict like objects, can be overriden
+only with the MonkeyPatching of the class object during the plugin
+initialization.
+
+`override_monkey` module will be used for that purpose.
 
 .. This section describes our response to these forces. It is stated in full sentences, with active voice. "We will …"
 
 Consequences
 ************
 
-TODO: Add what other things will change as a result of creating this repo.
+RG Products will maintaining two repositories to :
+
+* edx-platform - override decorators and changes that cannot be moved to the
+  plugin.
+* rg-openedx-plugin - all (major) RG OeX refinements.
 
 .. This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
 
 Rejected Alternatives
 *********************
 
-TODO: If applicable, list viable alternatives to creating this new repo and give reasons for why they were rejected. If not applicable, remove section.
+Continue with the superstructure over the vanilla Open edX.
 
 .. This section lists alternate options considered, described briefly, with pros and cons.
 
