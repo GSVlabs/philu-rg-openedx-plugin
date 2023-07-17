@@ -5,7 +5,13 @@ from django.conf import settings
 
 from oex_plugin.settings.production import *
 
-
+# This block of code is intended to customize the behavior of the plugin
+# specifically for the Devstack environment by overriding certain settings.
+# If the required modules for the Devstack environment are available,
+# the block will perform the necessary overrides.
+# However, if the required modules are not available, the block will be
+# skipped, allowing the plugin to be used outside the platform without 
+# any environment-specific modifications.
 try:
     from lms.envs.common import _make_mako_template_dirs
     from openedx.core.lib.derived import derive_settings
