@@ -24,5 +24,13 @@ class OexPluginConfig(AppConfig):
                     PluginSettings.RELATIVE_PATH: 'settings.devstack',
                 },
             },
+            'cms.djangoapp': {
+                'production': {
+                    PluginSettings.RELATIVE_PATH: 'settings.production',
+                },
+                'devstack': {
+                    PluginSettings.RELATIVE_PATH: 'settings.devstack',
+                },
+            },
         },
     }
