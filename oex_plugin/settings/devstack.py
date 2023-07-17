@@ -1,12 +1,12 @@
 """
 Devstack settings variables required by the RG OeX Plugin.
 """
+from django.conf import settings
 
 from oex_plugin.settings.production import *
 
 
 try:
-    from django.conf import settings
     from lms.envs.common import _make_mako_template_dirs
     from openedx.core.lib.derived import derive_settings
 except ImportError:

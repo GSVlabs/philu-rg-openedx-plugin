@@ -2,6 +2,8 @@
 -c constraints.txt
 
 django==3.2.19            # Web application framework
+sentry-sdk==0.19.5
 
--e git+https://github.com/open-craft/xblock-pdf.git@v1.1.0#egg=xblock-pdf
--e git+https://github.com/overhangio/openedx-scorm-xblock.git@master#egg=openedx-scorm-xblock
+git+https://github.com/open-craft/xblock-pdf.git@v1.1.0#egg=xblock-pdf==v1.1.0
+git+https://github.com/overhangio/openedx-scorm-xblock.git@master#egg=openedx-scorm-xblock
+git+https://github.com/pmitros/FeedbackXBlock.git@master#egg=feedback-xblock

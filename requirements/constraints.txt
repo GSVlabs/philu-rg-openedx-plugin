@@ -10,3 +10,6 @@
 
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+
+# Scorm/PDF xblocks will try to install newer version of the library which will lead to conflicts
+fs~=2.0.18

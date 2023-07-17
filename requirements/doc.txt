@@ -4,10 +4,6 @@
 #
 #    make upgrade
 #
--e git+https://github.com/overhangio/openedx-scorm-xblock.git@master#egg=openedx-scorm-xblock
-    # via -r requirements/test.txt
--e git+https://github.com/open-craft/xblock-pdf.git@v1.1.0#egg=xblock-pdf
-    # via -r requirements/test.txt
 alabaster==0.7.13
     # via sphinx
 appdirs==1.4.4
@@ -32,7 +28,7 @@ cffi==1.15.1
     #   pynacl
 charset-normalizer==3.2.0
     # via requests
-click==8.1.4
+click==8.1.5
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -71,8 +67,9 @@ exceptiongroup==1.1.2
     # via
     #   -r requirements/test.txt
     #   pytest
-fs==2.4.16
+fs==2.0.27
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   xblock
 idna==3.4
@@ -123,6 +120,8 @@ newrelic==8.8.1
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
+openedx-scorm-xblock @ git+https://github.com/overhangio/openedx-scorm-xblock.git@master
+    # via -r requirements/test.txt
 packaging==23.1
     # via
     #   -r requirements/test.txt
@@ -181,6 +180,7 @@ pytz==2023.3
     #   -r requirements/test.txt
     #   babel
     #   django
+    #   fs
     #   xblock
 pyyaml==6.0
     # via
@@ -279,11 +279,13 @@ xblock==1.6.2
     #   openedx-scorm-xblock
     #   xblock-pdf
     #   xblock-utils
+xblock-pdf @ git+https://github.com/open-craft/xblock-pdf.git@v1.1.0
+    # via -r requirements/test.txt
 xblock-utils==3.2.0
     # via
     #   -r requirements/test.txt
     #   xblock-pdf
-zipp==3.16.1
+zipp==3.16.2
     # via
     #   importlib-metadata
     #   importlib-resources

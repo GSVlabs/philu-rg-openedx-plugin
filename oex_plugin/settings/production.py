@@ -4,7 +4,7 @@ Production settings variables required by the RG OeX Plugin.
 from django.conf import settings
 
 
-AUTH_TOKENS = settings.get('AUTH_TOKENS', {})
+AUTH_TOKENS = getattr(settings, 'AUTH_TOKENS', {})
 
 if AUTH_TOKENS.get('RG_SENTRY_DSN', None):
     import sentry_sdk

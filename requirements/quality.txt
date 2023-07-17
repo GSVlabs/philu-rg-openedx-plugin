@@ -4,10 +4,6 @@
 #
 #    make upgrade
 #
--e git+https://github.com/overhangio/openedx-scorm-xblock.git@master#egg=openedx-scorm-xblock
-    # via -r requirements/test.txt
--e git+https://github.com/open-craft/xblock-pdf.git@v1.1.0#egg=xblock-pdf
-    # via -r requirements/test.txt
 appdirs==1.4.4
     # via
     #   -r requirements/test.txt
@@ -24,7 +20,7 @@ cffi==1.15.1
     # via
     #   -r requirements/test.txt
     #   pynacl
-click==8.1.4
+click==8.1.5
     # via
     #   -r requirements/test.txt
     #   click-log
@@ -65,8 +61,9 @@ exceptiongroup==1.1.2
     # via
     #   -r requirements/test.txt
     #   pytest
-fs==2.4.16
+fs==2.0.27
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   xblock
 iniconfig==2.0.0
@@ -103,6 +100,8 @@ newrelic==8.8.1
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
+openedx-scorm-xblock @ git+https://github.com/overhangio/openedx-scorm-xblock.git@master
+    # via -r requirements/test.txt
 packaging==23.1
     # via
     #   -r requirements/test.txt
@@ -111,7 +110,7 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-platformdirs==3.8.1
+platformdirs==3.9.1
     # via pylint
 pluggy==1.2.0
     # via
@@ -168,6 +167,7 @@ pytz==2023.3
     # via
     #   -r requirements/test.txt
     #   django
+    #   fs
     #   xblock
 pyyaml==6.0
     # via
@@ -231,6 +231,8 @@ xblock==1.6.2
     #   openedx-scorm-xblock
     #   xblock-pdf
     #   xblock-utils
+xblock-pdf @ git+https://github.com/open-craft/xblock-pdf.git@v1.1.0
+    # via -r requirements/test.txt
 xblock-utils==3.2.0
     # via
     #   -r requirements/test.txt
