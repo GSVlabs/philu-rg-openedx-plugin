@@ -16,11 +16,15 @@ astroid==2.15.6
     # via
     #   pylint
     #   pylint-celery
+certifi==2023.5.7
+    # via
+    #   -r requirements/test.txt
+    #   sentry-sdk
 cffi==1.15.1
     # via
     #   -r requirements/test.txt
     #   pynacl
-click==8.1.5
+click==8.1.6
     # via
     #   -r requirements/test.txt
     #   click-log
@@ -61,6 +65,8 @@ exceptiongroup==1.1.2
     # via
     #   -r requirements/test.txt
     #   pytest
+feedback-xblock @ git+https://github.com/pmitros/FeedbackXBlock.git@master
+    # via -r requirements/test.txt
 fs==2.0.27
     # via
     #   -c requirements/constraints.txt
@@ -169,11 +175,13 @@ pytz==2023.3
     #   django
     #   fs
     #   xblock
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
     #   xblock
+sentry-sdk==0.19.5
+    # via -r requirements/test.txt
 simplejson==3.19.1
     # via
     #   -r requirements/test.txt
@@ -213,6 +221,11 @@ typing-extensions==4.7.1
     #   asgiref
     #   astroid
     #   pylint
+urllib3==1.26.16
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/test.txt
+    #   sentry-sdk
 web-fragments==2.0.0
     # via
     #   -r requirements/test.txt
@@ -228,6 +241,7 @@ wrapt==1.15.0
 xblock==1.6.2
     # via
     #   -r requirements/test.txt
+    #   feedback-xblock
     #   openedx-scorm-xblock
     #   xblock-pdf
     #   xblock-utils

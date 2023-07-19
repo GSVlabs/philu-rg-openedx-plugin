@@ -13,3 +13,5 @@
 
 # Scorm/PDF xblocks will try to install newer version of the library which will lead to conflicts
 fs~=2.0.18
+
+urllib3<2,>=1.25.2
