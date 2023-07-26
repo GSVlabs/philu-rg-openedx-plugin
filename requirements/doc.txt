@@ -6,43 +6,40 @@
 #
 alabaster==0.7.13
     # via sphinx
-appdirs==1.4.4
-    # via
-    #   -r requirements/test.txt
-    #   fs
-asgiref==3.7.2
+asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-babel==2.12.1
+attrs==22.2.0
+    # via
+    #   -r requirements/test.txt
+    #   pytest
+babel==2.11.0
     # via sphinx
 bleach==6.0.0
     # via readme-renderer
 build==0.10.0
     # via -r requirements/doc.in
-certifi==2023.5.7
-    # via
-    #   -r requirements/test.txt
-    #   requests
-    #   sentry-sdk
+certifi==2022.12.7
+    # via requests
 cffi==1.15.1
     # via
     #   -r requirements/test.txt
     #   pynacl
-charset-normalizer==3.2.0
+charset-normalizer==3.0.1
     # via requests
-click==8.1.6
+click==8.1.3
     # via
     #   -r requirements/test.txt
     #   code-annotations
     #   edx-django-utils
 code-annotations==1.3.0
     # via -r requirements/test.txt
-coverage[toml]==7.2.7
+coverage[toml]==7.1.0
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-django==3.2.19
+django==3.2.17
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -58,76 +55,57 @@ django-waffle==3.0.0
     #   edx-django-utils
 doc8==1.1.1
     # via -r requirements/doc.in
-docutils==0.20.1
+docutils==0.19
     # via
     #   doc8
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
-edx-django-utils==5.5.0
+edx-django-utils==5.2.0
     # via -r requirements/test.txt
-exceptiongroup==1.1.2
+exceptiongroup==1.1.0
     # via
     #   -r requirements/test.txt
     #   pytest
-feedback-xblock @ git+https://github.com/pmitros/FeedbackXBlock.git@master
-    # via -r requirements/test.txt
-fs==2.0.27
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/test.txt
-    #   xblock
 idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.8.0
+importlib-metadata==6.0.0
     # via
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.0.0
+importlib-resources==5.10.2
     # via keyring
 iniconfig==2.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-jaraco-classes==3.3.0
+jaraco-classes==3.2.3
     # via keyring
 jinja2==3.1.2
     # via
     #   -r requirements/test.txt
     #   code-annotations
     #   sphinx
-keyring==24.2.0
+keyring==23.13.1
     # via twine
-lxml==4.9.3
-    # via
-    #   -r requirements/test.txt
-    #   xblock
-mako==1.2.4
-    # via
-    #   -r requirements/test.txt
-    #   xblock-utils
-markdown-it-py==3.0.0
+markdown-it-py==2.1.0
     # via rich
-markupsafe==2.1.3
+markupsafe==2.1.2
     # via
     #   -r requirements/test.txt
     #   jinja2
-    #   mako
-    #   xblock
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==9.1.0
+more-itertools==9.0.0
     # via jaraco-classes
-newrelic==8.8.1
+newrelic==8.5.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-openedx-scorm-xblock @ git+https://github.com/overhangio/openedx-scorm-xblock.git@master
-    # via -r requirements/test.txt
-packaging==23.1
+packaging==23.0
     # via
     #   -r requirements/test.txt
     #   build
@@ -139,11 +117,11 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-pluggy==1.2.0
+pluggy==1.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-psutil==5.9.5
+psutil==5.9.4
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -151,7 +129,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pygments==2.15.1
+pygments==2.14.0
     # via
     #   doc8
     #   readme-renderer
@@ -163,66 +141,51 @@ pynacl==1.5.0
     #   edx-django-utils
 pyproject-hooks==1.0.0
     # via build
-pytest==7.4.0
+pytest==7.2.1
     # via
     #   -r requirements/test.txt
     #   pytest-cov
     #   pytest-django
-pytest-cov==4.1.0
+pytest-cov==4.0.0
     # via -r requirements/test.txt
 pytest-django==4.5.2
     # via -r requirements/test.txt
-python-dateutil==2.8.2
-    # via
-    #   -r requirements/test.txt
-    #   xblock
-python-slugify==8.0.1
+python-slugify==8.0.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-pytz==2023.3
+pytz==2022.7.1
     # via
     #   -r requirements/test.txt
     #   babel
     #   django
-    #   fs
-    #   xblock
-pyyaml==6.0.1
+pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-    #   xblock
-readme-renderer==40.0
+readme-renderer==37.3
     # via twine
-requests==2.31.0
+requests==2.28.2
     # via
     #   requests-toolbelt
     #   sphinx
     #   twine
-requests-toolbelt==1.0.0
+requests-toolbelt==0.10.1
     # via twine
 restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==13.4.2
+rich==13.3.1
     # via twine
-sentry-sdk==0.19.5
-    # via -r requirements/test.txt
-simplejson==3.19.1
-    # via
-    #   -r requirements/test.txt
-    #   xblock-utils
 six==1.16.0
-    # via
-    #   -r requirements/test.txt
-    #   bleach
-    #   fs
-    #   python-dateutil
+    # via bleach
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==7.0.1
-    # via -r requirements/doc.in
+sphinx==5.3.0
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/doc.in
 sphinxcontrib-applehelp==1.0.4
     # via sphinx
 sphinxcontrib-devhelp==1.0.2
@@ -235,11 +198,11 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sqlparse==0.4.4
+sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==5.1.0
+stevedore==4.1.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -259,47 +222,15 @@ tomli==2.0.1
     #   pytest
 twine==4.0.2
     # via -r requirements/doc.in
-typing-extensions==4.7.1
+typing-extensions==4.4.0
+    # via rich
+urllib3==1.26.14
     # via
-    #   -r requirements/test.txt
-    #   asgiref
-    #   rich
-urllib3==1.26.16
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/test.txt
     #   requests
-    #   sentry-sdk
     #   twine
-web-fragments==2.0.0
-    # via
-    #   -r requirements/test.txt
-    #   openedx-scorm-xblock
-    #   xblock
-    #   xblock-utils
 webencodings==0.5.1
     # via bleach
-webob==1.8.7
-    # via
-    #   -r requirements/test.txt
-    #   xblock
-xblock==1.6.2
-    # via
-    #   -r requirements/test.txt
-    #   feedback-xblock
-    #   openedx-scorm-xblock
-    #   xblock-pdf
-    #   xblock-utils
-xblock-pdf @ git+https://github.com/open-craft/xblock-pdf.git@v1.1.0
-    # via -r requirements/test.txt
-xblock-utils==3.2.0
-    # via
-    #   -r requirements/test.txt
-    #   xblock-pdf
-zipp==3.16.2
+zipp==3.12.1
     # via
     #   importlib-metadata
     #   importlib-resources
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools

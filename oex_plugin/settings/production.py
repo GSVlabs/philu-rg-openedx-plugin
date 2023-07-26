@@ -1,11 +1,18 @@
 """
 Production settings variables required by the RG OeX Plugin.
 """
+import logging
 from subprocess import CalledProcessError, check_output
 
-import sentry_sdk
-from sentry_sdk.integrations.celery import CeleryIntegration
-from sentry_sdk.integrations.django import DjangoIntegration
+try:
+    import sentry_sdk
+    from sentry_sdk.integrations.celery import CeleryIntegration
+    from sentry_sdk.integrations.django import DjangoIntegration
+except ImportError:
+    logger = logging.getLogger(__name__)
+    logger.warning(
+        "Unable to import sentry_sdk! It's ok for the devstack env though."
+    )
 
 
 def plugin_settings(settings):

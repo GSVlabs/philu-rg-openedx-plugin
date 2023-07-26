@@ -35,25 +35,12 @@ def load_requirements(*requirements_paths):
     Returns a list of requirement strings.
     """
     requirements = {}
-    packages_from_repository = []
     constraint_files = set()
 
     # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
     requirement_line_regex = re.compile(r"([a-zA-Z0-9-_.]+)([<>=][^#\s]+)?")
-    # regular expression to detect packages from a repository
-    # example-xblock @ git+https://github.com/path/to/XBlock.git@branch
-    requirement_line_xblock_regex = re.compile(r"([a-zA-Z0-9-_.]+)\s+@\s+git\+(.+)\.git@(.+)")
 
-    def add_version_constraint_or_raise(
-        current_line, current_requirements,
-        packages_from_repository,
-        add_if_not_present
-    ):
-        regex_xblock_match = requirement_line_xblock_regex.match(current_line)
-        if regex_xblock_match:
-            packages_from_repository.append(current_line)
-            return
-
+    def add_version_constraint_or_raise(current_line, current_requirements, add_if_not_present):
         regex_match = requirement_line_regex.match(current_line)
         if regex_match:
             package = regex_match.group(1)
@@ -71,14 +58,13 @@ def load_requirements(*requirements_paths):
             if add_if_not_present or package in current_requirements:
                 current_requirements[package] = version_constraints
 
-
     # read requirements from .in
     # store the path to any constraint files that are pulled in
     for path in requirements_paths:
         with open(path) as reqs:
             for line in reqs:
                 if is_requirement(line):
-                    add_version_constraint_or_raise(line, requirements, packages_from_repository, True)
+                    add_version_constraint_or_raise(line, requirements, True)
                 if line and line.startswith('-c') and not line.startswith('-c http'):
                     constraint_files.add(os.path.dirname(path) + '/' + line.split('#')[0].replace('-c', '').strip())
 
@@ -87,11 +73,11 @@ def load_requirements(*requirements_paths):
         with open(constraint_file) as reader:
             for line in reader:
                 if is_requirement(line):
-                    add_version_constraint_or_raise(line, requirements, packages_from_repository, False)
+                    add_version_constraint_or_raise(line, requirements, False)
 
     # process back into list of pkg><=constraints strings
     constrained_requirements = [f'{pkg}{version or ""}' for (pkg, version) in sorted(requirements.items())]
-    return constrained_requirements + packages_from_repository
+    return constrained_requirements
 
 
 def is_requirement(line):
@@ -130,7 +116,7 @@ setup(
     ),
 
     include_package_data=True,
-    install_requires=load_requirements('requirements/base.txt'),
+    install_requires=load_requirements('requirements/base.in'),
     python_requires=">=3.8",
     license="AGPL 3.0",
     zip_safe=False,

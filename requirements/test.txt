@@ -4,27 +4,21 @@
 #
 #    make upgrade
 #
-appdirs==1.4.4
-    # via
-    #   -r requirements/base.txt
-    #   fs
-asgiref==3.7.2
+asgiref==3.6.0
     # via
     #   -r requirements/base.txt
     #   django
-certifi==2023.5.7
-    # via
-    #   -r requirements/base.txt
-    #   sentry-sdk
+attrs==22.2.0
+    # via pytest
 cffi==1.15.1
     # via pynacl
-click==8.1.6
+click==8.1.3
     # via
     #   code-annotations
     #   edx-django-utils
 code-annotations==1.3.0
     # via -r requirements/test.in
-coverage[toml]==7.2.7
+coverage[toml]==7.1.0
     # via pytest-cov
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
@@ -35,92 +29,51 @@ django-crum==0.7.9
     # via edx-django-utils
 django-waffle==3.0.0
     # via edx-django-utils
-edx-django-utils==5.5.0
+edx-django-utils==5.2.0
     # via -r requirements/test.in
-exceptiongroup==1.1.2
+exceptiongroup==1.1.0
     # via pytest
-feedback-xblock @ git+https://github.com/pmitros/FeedbackXBlock.git@master
-    # via -r requirements/base.txt
-fs==2.0.27
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/base.txt
-    #   xblock
 iniconfig==2.0.0
     # via pytest
 jinja2==3.1.2
     # via code-annotations
-lxml==4.9.3
-    # via
-    #   -r requirements/base.txt
-    #   xblock
-mako==1.2.4
-    # via
-    #   -r requirements/base.txt
-    #   xblock-utils
-markupsafe==2.1.3
-    # via
-    #   -r requirements/base.txt
-    #   jinja2
-    #   mako
-    #   xblock
-newrelic==8.8.1
+markupsafe==2.1.2
+    # via jinja2
+newrelic==8.5.0
     # via edx-django-utils
-openedx-scorm-xblock @ git+https://github.com/overhangio/openedx-scorm-xblock.git@master
-    # via -r requirements/base.txt
-packaging==23.1
+packaging==23.0
     # via pytest
 pbr==5.11.1
     # via stevedore
-pluggy==1.2.0
+pluggy==1.0.0
     # via pytest
-psutil==5.9.5
+psutil==5.9.4
     # via edx-django-utils
 pycparser==2.21
     # via cffi
 pynacl==1.5.0
     # via edx-django-utils
-pytest==7.4.0
+pytest==7.2.1
     # via
     #   pytest-cov
     #   pytest-django
-pytest-cov==4.1.0
+pytest-cov==4.0.0
     # via -r requirements/test.in
 pytest-django==4.5.2
     # via -r requirements/test.in
-python-dateutil==2.8.2
-    # via
-    #   -r requirements/base.txt
-    #   xblock
-python-slugify==8.0.1
+python-slugify==8.0.0
     # via code-annotations
-pytz==2023.3
+pytz==2022.7.1
     # via
     #   -r requirements/base.txt
     #   django
-    #   fs
-    #   xblock
-pyyaml==6.0.1
-    # via
-    #   -r requirements/base.txt
-    #   code-annotations
-    #   xblock
-sentry-sdk==0.19.5
-    # via -r requirements/base.txt
-simplejson==3.19.1
-    # via
-    #   -r requirements/base.txt
-    #   xblock-utils
-six==1.16.0
-    # via
-    #   -r requirements/base.txt
-    #   fs
-    #   python-dateutil
-sqlparse==0.4.4
+pyyaml==6.0
+    # via code-annotations
+sqlparse==0.4.3
     # via
     #   -r requirements/base.txt
     #   django
-stevedore==5.1.0
+stevedore==4.1.1
     # via
     #   code-annotations
     #   edx-django-utils
@@ -130,38 +83,3 @@ tomli==2.0.1
     # via
     #   coverage
     #   pytest
-typing-extensions==4.7.1
-    # via
-    #   -r requirements/base.txt
-    #   asgiref
-urllib3==1.26.16
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/base.txt
-    #   sentry-sdk
-web-fragments==2.0.0
-    # via
-    #   -r requirements/base.txt
-    #   openedx-scorm-xblock
-    #   xblock
-    #   xblock-utils
-webob==1.8.7
-    # via
-    #   -r requirements/base.txt
-    #   xblock
-xblock==1.6.2
-    # via
-    #   -r requirements/base.txt
-    #   feedback-xblock
-    #   openedx-scorm-xblock
-    #   xblock-pdf
-    #   xblock-utils
-xblock-pdf @ git+https://github.com/open-craft/xblock-pdf.git@v1.1.0
-    # via -r requirements/base.txt
-xblock-utils==3.2.0
-    # via
-    #   -r requirements/base.txt
-    #   xblock-pdf
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools

@@ -11,8 +11,3 @@
 # edx-platform constraints
 # be aware of the platform version used - `open-release/palm.master` in this particular case
 -c https://raw.githubusercontent.com/openedx/edx-platform/open-release/palm.master/requirements/constraints.txt
-
-# Scorm/PDF xblocks will try to install newer version of the library which will lead to conflicts
-fs~=2.0.18
-
-urllib3<2,>=1.25.2
