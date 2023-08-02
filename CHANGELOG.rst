@@ -14,7 +14,15 @@ Change Log
 Unreleased
 **********
 
-*
+Added
+=====
+
+* move RG-specific settings from the edx-platform `RGOeX-25959 <https://youtrack.raccoongang.com/issue/RGOeX-25959>`_
+
+Removed
+=======
+
+* revert POC commit 1db8682b `RGOeX-25959 <https://youtrack.raccoongang.com/issue/RGOeX-25959>`_
 
 [0.1.0] - 2023-??-??
 ********************
