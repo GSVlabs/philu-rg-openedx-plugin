@@ -102,6 +102,11 @@ if sys.argv[-1] == 'tag':
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="utf8").read()
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
+APP_NAMES = [
+    "oex_plugin = oex_plugin.apps:OexPluginConfig",
+    "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig"
+]
+
 setup(
     name='rg-openedx-plugin',
     version=VERSION,
@@ -132,11 +137,7 @@ setup(
         'Programming Language :: Python :: 3.8',
     ],
     entry_points={
-        "lms.djangoapp": [
-            "oex_plugin = oex_plugin.apps:OexPluginConfig",
-        ],
-        "cms.djangoapp": [
-            "oex_plugin = oex_plugin.apps:OexPluginConfig",
-        ],
+        "lms.djangoapp": APP_NAMES,
+        "cms.djangoapp": APP_NAMES,
     }
 )

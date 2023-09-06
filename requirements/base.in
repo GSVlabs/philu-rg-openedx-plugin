@@ -3,3 +3,6 @@
 
 Django             # Web application framework
 
+# These requirements are related to the EdX Info Pages app.
+django-modeltranslation
+django-tinymce
