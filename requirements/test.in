@@ -3,8 +3,14 @@
 
 -r base.txt               # Core dependencies for this package
 
+codecov                   # Code coverage reporting
+code-annotations          # provides commands used by the pii_check make target.
+edx-django-utils
+edx-lint                  # edX pylint rules and plugins
+isort                     # to standardize order of imports
+pycodestyle               # PEP 8 compliance validation
+pydocstyle
 pytest-cov                # pytest extension for code coverage statistics
 pytest-django             # pytest extension for better Django support
-code-annotations          # provides commands used by the pii_check make target.
-
-edx-django-utils
+tox                       # Virtualenv management for tests
+tox-battery               # Makes tox aware of requirements file changes
