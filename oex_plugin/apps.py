@@ -5,6 +5,7 @@ oex_plugin Django application initialization.
 from django.apps import AppConfig
 from edx_django_utils.plugins.constants import PluginSettings, PluginURLs
 
+
 class OexPluginConfig(AppConfig):
     """
     Configuration for the oex_plugin Django application.
@@ -31,6 +32,20 @@ class OexPluginConfig(AppConfig):
                 'devstack': {
                     PluginSettings.RELATIVE_PATH: 'settings.devstack',
                 },
+            },
+        },
+        PluginURLs.CONFIG: {
+            'lms.djangoapp': {
+                PluginURLs.NAMESPACE: 'oex_plugin',
+                PluginURLs.APP_NAME: 'oex_plugin',
+                PluginURLs.REGEX: '',
+                PluginURLs.RELATIVE_PATH: 'lms.urls',
+            },
+            'cms.djangoapp': {
+                PluginURLs.NAMESPACE: 'oex_plugin',
+                PluginURLs.APP_NAME: 'oex_plugin',
+                PluginURLs.REGEX: '',
+                PluginURLs.RELATIVE_PATH: 'cms.urls',
             },
         },
     }
