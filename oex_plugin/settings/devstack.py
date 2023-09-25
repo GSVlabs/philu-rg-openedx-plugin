@@ -6,7 +6,6 @@ import logging
 from lms.envs.common import _make_mako_template_dirs
 from openedx.core.lib.derived import derive_settings
 
-
 log = logging.getLogger(__name__)
 
 
