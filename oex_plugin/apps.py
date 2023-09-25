@@ -3,7 +3,8 @@ oex_plugin Django application initialization.
 """
 
 from django.apps import AppConfig
-from edx_django_utils.plugins.constants import PluginSettings, PluginURLs
+from edx_django_utils.plugins.constants import PluginSettings
+
 
 
 class OexPluginConfig(AppConfig):

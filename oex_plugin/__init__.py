@@ -1,5 +1,5 @@
 """
-RG Extentions for Open edX Platform
+RG Extentions for Open edX Platform.
 """
 
 __version__ = '0.1.0'
