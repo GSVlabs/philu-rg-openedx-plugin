@@ -15,12 +15,28 @@ Purpose
 *******
 
 RG Extentions for Open edX Platform
+-----------------------------------
 
-TODO: The ``README.rst`` file should start with a brief description of the repository and its purpose.
-It should be described in the context of other repositories under the ``openedx``
-organization. It should make clear where this fits in to the overall Open edX
-codebase and should be oriented towards people who are new to the Open edX
-project.
+This plugin is designed to simplify the process of setting up and maintaining RG's Open Edx platform releases.
+
+EdX Info Pages App
+------------------
+
+EdX Info Pages is a Django application designed to enhance the capabilities of OpenEdx LMS administrators.
+It introduces an additional extra tab in the LMS admin panel ``Info Pages``, specifically for managing informational
+pages, where staff members can create content in multiple languages.
+
+Configuration
+
+All of the plugin's settings are located in *edx_info_pages/settings/common.py*.
+Please ensure that you set up MODELTRANSLATION_LANGUAGES. This should be a tuple of supported languages.
+
+If not configured, the default language will be the platform's default language from LANGUAGE_CODE.
+
+`MODELTRANSLATION_DEFAULT_LANGUAGE` specifies the default language for info page translation.
+Its default value is `LANGUAGE_CODE`.
+
+To modify the TinyMCE configuration, you can update `TINYMCE_DEFAULT_CONFIG`.
 
 Getting Started
 ***************
@@ -38,6 +54,12 @@ One Time Setup
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
   mkvirtualenv -p python3.8 openedx-rg-plugin
+
+  # After installing the plugin
+  1. cd edx-platform
+  1. paver update_db
+  1. reload the platform
+  1. run migrations
 
 
 Every time you develop something in this repo

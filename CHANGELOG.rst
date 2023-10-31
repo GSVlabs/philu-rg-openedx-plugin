@@ -17,6 +17,8 @@ Unreleased
 Added
 =====
 
+* add the Edx Info Pages app `RGOeX-26048 <https://youtrack.raccoongang.com/issue/RGOeX-26048>`_
+
 * moved favicon-related changes `RGOeX-26060 <https://youtrack.raccoongang.com/issue/RGOeX-26060>`_
 
   * move RG-specific settings from the edx-platform `RGOeX-25959 <https://youtrack.raccoongang.com/issue/RGOeX-25959>`_
