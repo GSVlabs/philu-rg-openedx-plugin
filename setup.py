@@ -102,11 +102,6 @@ if sys.argv[-1] == 'tag':
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="utf8").read()
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
-APP_NAMES = [
-    "oex_plugin = oex_plugin.apps:OexPluginConfig",
-    "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig"
-]
-
 setup(
     name='rg-openedx-plugin',
     version=VERSION,
@@ -116,7 +111,7 @@ setup(
     author_email='info@raccoongang.com',
     url='https://gitlab.com/openedx/openedx-rg-plugin',
     packages=find_packages(
-        include=['oex_plugin', 'oex_plugin.*'],
+        include=['oex_plugin', 'edx_info_pages'],
         exclude=["*tests"],
     ),
 
@@ -137,7 +132,12 @@ setup(
         'Programming Language :: Python :: 3.8',
     ],
     entry_points={
-        "lms.djangoapp": APP_NAMES,
-        "cms.djangoapp": APP_NAMES,
+        "lms.djangoapp": [
+            "oex_plugin = oex_plugin.apps:OexPluginConfig",
+            "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig"
+        ],
+        "cms.djangoapp": [
+            "oex_plugin = oex_plugin.apps:OexPluginConfig",
+        ],
     }
 )

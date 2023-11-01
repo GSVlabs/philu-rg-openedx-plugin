@@ -4,3 +4,4 @@ include README.rst
 include requirements/base.in
 include requirements/constraints.txt
 recursive-include oex_plugin *.py *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg
+recursive-include edx_info_pages *.py *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg
