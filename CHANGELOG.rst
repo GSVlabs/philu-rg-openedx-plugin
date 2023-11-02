@@ -26,6 +26,11 @@ Added
 
   * move RG-specific settings from the edx-platform `RGOeX-25959 <https://youtrack.raccoongang.com/issue/RGOeX-25959>`_
 
+Changed
+=======
+
+* changed course visibility setting for the about page `RGOeX-26179 <https://youtrack.raccoongang.com/issue/RGOeX-26179>`_
+
 Removed
 =======
 

@@ -32,4 +32,5 @@ def plugin_settings(settings):
             send_default_pii=True
         )
 
+    settings.COURSE_ABOUT_VISIBILITY_PERMISSION = 'see_about_page'
     settings.INACTIVE_USER_URL = f'http{"s" if settings.HTTPS == "on" else ""}://{settings.CMS_BASE}'
