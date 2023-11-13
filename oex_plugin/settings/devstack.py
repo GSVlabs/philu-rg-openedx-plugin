@@ -28,3 +28,4 @@ def plugin_settings(settings):
     derive_settings(settings.__name__)
 
     settings.INACTIVE_USER_URL = f'http{"s" if settings.HTTPS == "on" else ""}://{settings.CMS_BASE}'
+    settings.OVERRIDE_GET_USER_COUNT = 'edx_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count'
