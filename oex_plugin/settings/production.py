@@ -34,3 +34,6 @@ def plugin_settings(settings):
 
     settings.COURSE_ABOUT_VISIBILITY_PERMISSION = 'see_about_page'
     settings.INACTIVE_USER_URL = f'http{"s" if settings.HTTPS == "on" else ""}://{settings.CMS_BASE}'
+    settings.OVERRIDE_GET_NAME_VALIDATION_ERROR = (
+        'oex_plugin.openedx.core.djangoapps.user_api.accounts.api.get_name_validation_error'
+    )
