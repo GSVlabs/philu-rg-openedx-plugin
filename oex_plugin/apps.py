@@ -19,18 +19,21 @@ class OexPluginConfig(AppConfig):
         PluginSettings.CONFIG: {
             'lms.djangoapp': {
                 'production': {
-                    PluginSettings.RELATIVE_PATH: 'settings.production',
+                    PluginSettings.RELATIVE_PATH: 'settings.lms.production',
                 },
                 'devstack': {
-                    PluginSettings.RELATIVE_PATH: 'settings.devstack',
+                    PluginSettings.RELATIVE_PATH: 'settings.lms.devstack',
+                },
+                'test': {
+                    PluginSettings.RELATIVE_PATH: 'settings.lms.test',
                 },
             },
             'cms.djangoapp': {
                 'production': {
-                    PluginSettings.RELATIVE_PATH: 'settings.production',
+                    PluginSettings.RELATIVE_PATH: 'settings.common.production',
                 },
                 'devstack': {
-                    PluginSettings.RELATIVE_PATH: 'settings.devstack',
+                    PluginSettings.RELATIVE_PATH: 'settings.common.devstack',
                 },
             },
         },
