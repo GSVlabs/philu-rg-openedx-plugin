@@ -19,7 +19,6 @@ def plugin_settings(settings):
     """
     Production settings overrides.
     """
-
     if RG_SENTRY_DSN := settings.AUTH_TOKENS.get('RG_SENTRY_DSN', None):
         try:
             platform_git_commit = check_output(['git', 'describe', '--always']).strip()

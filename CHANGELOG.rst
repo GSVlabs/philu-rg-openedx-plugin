@@ -14,12 +14,21 @@ Change Log
 Unreleased
 **********
 
-Fixed
-=====
+Changed
+=======
+
+* Allowed users to save social links with URL parameters `RGOeX-26082 <https://youtrack.raccoongang.com/issue/RGOeX-26082>`_
+
+  * Changes should be reverted when changes are accepted in the upstream: https://github.com/openedx/edx-platform/pull/33565 (master), https://github.com/openedx/edx-platform/pull/33610 (Quince)
+  * NOTE: we can't just drop the commit because it includes general refactoring that might be used in the future changes. But the final decision shold be made when rebasing.
 
 * "Twitter.com" changed to "x.com" `RGOeX-26082 <https://youtrack.raccoongang.com/issue/RGOeX-26083>`_
 
-  * Must be dropped when `Upstream MR <https://github.com/openedx/edx-platform/pull/33613>`_ is merged.
+  * Changes should be reverted when rebasing on Quince if upstream PR will be merged at the moment `quince#33613 <https://github.com/openedx/edx-platform/pull/33613>`_ is merged.
+  * NOTE: we can't just drop the commit because it includes general refactoring that might be used in the future changes. But the final decision shold be made when rebasing.
+
+Fixed
+=====
 
 * Add the user full name length validation for the registration form `RGOeX-26076 <https://youtrack.raccoongang.com/issue/RGOeX-26076>`_. This fixes 500 error when full name is longer than 255 characters.
 

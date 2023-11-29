@@ -59,3 +59,21 @@ TEMPLATES = [{
         ],
     },
 }]
+
+SOCIAL_PLATFORMS = {
+    'facebook': {
+        'display_name': 'Facebook',
+        'url_stub': 'facebook.com/',
+        'example': 'https://www.facebook.com/username'
+    },
+    'twitter': {
+        'display_name': 'Twitter',
+        'url_stub': 'x.com/',
+        'example': 'https://www.x.com/username'
+    },
+    'linkedin': {
+        'display_name': 'LinkedIn',
+        'url_stub': 'linkedin.com/in/',
+        'example': 'www.linkedin.com/in/username'
+    }
+}

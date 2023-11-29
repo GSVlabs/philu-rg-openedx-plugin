@@ -6,7 +6,7 @@ MODIFIED_TEST_DATA = [
     ('twitter', 'https://www.x.com/edX/', 'https://www.x.com/edX', True),
     ('twitter', 'https://www.x.com/edX/123s', None, False),
     ('twitter', 'x.com/edX', 'https://www.x.com/edX', True),
-    ('twitter', 'x.com/edX?foo=bar', 'https://www.x.com/edX', True),
+    ('twitter', 'x.com/edX?foo=bar', 'https://www.x.com/edX?foo=bar', True),
     ('twitter', 'x.com/test.user', 'https://www.x.com/test.user', True),
 ]
 

@@ -7,6 +7,7 @@ def plugin_settings(settings):
     """
     Overrides for LMS's test settings.
     """
+    # ======================================= General settings modifications ======================================= #
     settings.SOCIAL_MEDIA_FOOTER_ACE_URLS["twitter"] = "https://x.com/edXOnline"
     settings.SOCIAL_PLATFORMS["twitter"] = {
         "display_name": "Twitter",
@@ -14,9 +15,11 @@ def plugin_settings(settings):
         "example": "https://www.x.com/username"
     }
     settings.SOCIAL_MEDIA_FOOTER_ACE_URLS["twitter"] = "https://x.com/edXOnline"
+    # ================================================== Overrides ================================================== #
     TEST_OVERRIDES_PATH = "oex_plugin.tests.overrides"
     ACCOUNTS_TESTS_PATH = "openedx.core.djangoapps.user_api.accounts.tests"
     SCHEDULES_TEST_RESOLVER_PATH = "openedx.core.djangoapps.schedules.tests.test_resolvers"
+
     settings.OVERRIDE_TEST_SOCIAL_LINK_INPUT = (
         f"{TEST_OVERRIDES_PATH}.{ACCOUNTS_TESTS_PATH}.test_utils.test_social_link_input"
     )
@@ -39,5 +42,8 @@ def plugin_settings(settings):
         f"{TEST_OVERRIDES_PATH}.{SCHEDULES_TEST_RESOLVER_PATH}.test_schedule_context_next_section_resolver"
     )
     settings.OVERRIDE_BRANDING_TEST_GET_FOOTER = (
-        "oex_plugin.tests.overrides.lms.djangoapps.branding.tests.test_api.test_get_footer"
+        f"{TEST_OVERRIDES_PATH}.lms.djangoapps.branding.tests.test_api.test_get_footer"
+    )
+    settings.OVERRIDE_GET_USERNAME_FOR_SOCIAL_LINK = (
+        "oex_plugin.openedx.core.djangoapps.user_api.accounts.utils.get_username_from_social_link"
     )
