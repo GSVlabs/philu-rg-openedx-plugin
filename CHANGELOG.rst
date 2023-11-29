@@ -17,6 +17,10 @@ Unreleased
 Fixed
 =====
 
+* "Twitter.com" changed to "x.com" `RGOeX-26082 <https://youtrack.raccoongang.com/issue/RGOeX-26083>`_
+
+  * Must be dropped when `Upstream MR <https://github.com/openedx/edx-platform/pull/33613>`_ is merged.
+
 * Add the user full name length validation for the registration form `RGOeX-26076 <https://youtrack.raccoongang.com/issue/RGOeX-26076>`_. This fixes 500 error when full name is longer than 255 characters.
 
   * Should be dropped when upstream PR (`master#33501 <https://github.com/openedx/edx-platform/pull/33501>`_, `quince#33615 <https://github.com/openedx/edx-platform/pull/33615>`_) will be merged

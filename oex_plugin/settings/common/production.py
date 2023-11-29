@@ -1,5 +1,5 @@
 """
-Production settings variables required by the RG OeX Plugin.
+Common Production settings required by the RG OeX Plugin.
 """
 import logging
 from subprocess import CalledProcessError, check_output
@@ -16,6 +16,9 @@ except ImportError:
 
 
 def plugin_settings(settings):
+    """
+    Production settings overrides.
+    """
 
     if RG_SENTRY_DSN := settings.AUTH_TOKENS.get('RG_SENTRY_DSN', None):
         try:

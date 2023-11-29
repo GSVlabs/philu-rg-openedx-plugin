@@ -1,15 +1,17 @@
 """
-Devstack settings variables required by the RG OeX Plugin.
+Common Devstack settings required by the RG OeX Plugin.
 """
-import logging
-
 from lms.envs.common import _make_mako_template_dirs
 from openedx.core.lib.derived import derive_settings
 
-log = logging.getLogger(__name__)
+from oex_plugin.settings.common.production import plugin_settings as common_production_settings
 
 
 def plugin_settings(settings):
+    """
+    Overrides for the devstack.py settings.
+    """
+    common_production_settings(settings)
 
     settings.ENABLE_COMPREHENSIVE_THEMING = True
     settings.COMPREHENSIVE_THEME_DIRS = [
@@ -26,9 +28,3 @@ def plugin_settings(settings):
         }
     ]
     derive_settings(settings.__name__)
-
-    settings.INACTIVE_USER_URL = f'http{"s" if settings.HTTPS == "on" else ""}://{settings.CMS_BASE}'
-    settings.OVERRIDE_GET_NAME_VALIDATION_ERROR = (
-        'oex_plugin.openedx.core.djangoapps.user_api.accounts.api.get_name_validation_error'
-    )
-    settings.OVERRIDE_GET_USER_COUNT = 'oex_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count'
