@@ -17,7 +17,7 @@ def plugin_settings(settings):
     }
     settings.SOCIAL_MEDIA_FOOTER_ACE_URLS["twitter"] = "https://x.com/edXOnline"
     # ================================================== Overrides ================================================== #
-    settings.OVERRIDE_GET_USER_COUNT = "edx_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count"
+    settings.OVERRIDE_GET_USER_COUNT = "oex_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count"
     settings.OVERRIDE_GET_NAME_VALIDATION_ERROR = (
         "oex_plugin.openedx.core.djangoapps.user_api.accounts.api.get_name_validation_error"
     )
