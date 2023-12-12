@@ -40,17 +40,14 @@ build-base:
   resource_group: build
   only:
     refs:
-      - master
       - main
       - merge_requests
     changes:
       - Dockerfile
       - .gitlab-ci.yml
-  rules:
-    - exists:
-        - $CI_COMMIT_MESSAGE
-    - exists:
-        - $BUILD_BASE_IMAGE
+    variables:
+      - $CI_COMMIT_MESSAGE
+      - $BUILD_BASE_IMAGE
 
 build-test:
   stage: build-test
