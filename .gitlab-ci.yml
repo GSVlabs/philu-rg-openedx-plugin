@@ -48,6 +48,8 @@ build-base:
       - .gitlab-ci.yml
   rules:
     - exists:
+        - $CI_COMMIT_MESSAGE
+    - exists:
         - $BUILD_BASE_IMAGE
 
 build-test:
