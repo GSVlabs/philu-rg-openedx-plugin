@@ -45,6 +45,9 @@ build-base:
     changes:
       - Dockerfile
       - .gitlab-ci.yml
+    variables:
+      - $CI_COMMIT_MESSAGE
+      - $BUILD_BASE_IMAGE
 
 build-test:
   stage: build-test
@@ -56,6 +59,7 @@ build-test:
   resource_group: build
   only:
     refs:
+      - master
       - main
       - merge_requests
     changes:
@@ -69,6 +73,7 @@ build-test:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $TEST_IMAGE
   only:
+    - master
     - main
     - merge_requests
 
@@ -98,6 +103,7 @@ stylelint:
   script:
     - stylelint '**/*.scss' --config .stylelintrc --allow-empty-input
   only:
+    - master
     - main
     - merge_requests
 
