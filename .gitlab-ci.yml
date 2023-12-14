@@ -46,9 +46,6 @@ build-base:
     changes:
       - Dockerfile
       - .gitlab-ci.yml
-    variables:
-      - $CI_COMMIT_MESSAGE
-      - $BUILD_BASE_IMAGE
 
 build-base-force:
   stage: build-base
