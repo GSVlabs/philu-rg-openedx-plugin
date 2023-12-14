@@ -40,6 +40,7 @@ build-base:
   resource_group: build
   only:
     refs:
+      - master
       - main
       - merge_requests
     changes:
@@ -48,6 +49,17 @@ build-base:
     variables:
       - $CI_COMMIT_MESSAGE
       - $BUILD_BASE_IMAGE
+
+build-base-force:
+  stage: build-base
+  script:
+    - docker pull $BASE_IMAGE || true
+    - docker build --cache-from $BASE_IMAGE -t $BASE_IMAGE --target=base-image .
+    - docker push $BASE_IMAGE
+  resource_group: build
+  only:
+    variables:
+      - $BUILD_BASE_FORCE == "true"
 
 build-test:
   stage: build-test
