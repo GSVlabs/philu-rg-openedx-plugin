@@ -14,6 +14,11 @@ Change Log
 Unreleased
 **********
 
+Changed
+=======
+
+* Add the MR template (includes the DoR section) `OX-3406 https://youtrack.raccoongang.com/issue/OX-3406`_
+
 [1.1.0] - 2023-11-06
 ********************
 
