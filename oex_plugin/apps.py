@@ -33,7 +33,7 @@ class OexPluginConfig(AppConfig):
                     PluginSettings.RELATIVE_PATH: 'settings.common.production',
                 },
                 'devstack': {
-                    PluginSettings.RELATIVE_PATH: 'settings.common.devstack',
+                    PluginSettings.RELATIVE_PATH: 'settings.cms.devstack',
                 },
             },
         },
