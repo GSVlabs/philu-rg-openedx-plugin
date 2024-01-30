@@ -14,6 +14,11 @@ Change Log
 Unreleased
 **********
 
+Fixed
+=====
+
+* MFEs' POST requests CSRF failures `RGOeX-26352 <https://youtrack.raccoongang.com/issue/RGOeX-26352>`_
+
 Changed
 =======
 
