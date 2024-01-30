@@ -10,6 +10,7 @@ def plugin_settings(settings):
     """
     common_devstack_settings(settings)
     # ======================================= General settings modifications ======================================= #
+    settings.FEATURES["ENABLE_COOKIE_CONSENT"] = True
     settings.SOCIAL_PLATFORMS["twitter"] = {
         "display_name": "Twitter",
         "url_stub": "x.com/",

@@ -23,7 +23,7 @@ def plugin_settings(settings):
     settings.ELASTIC_SEARCH_CONFIG = [
         {
             'use_ssl': False,
-            'host': 'elasticsearch7.devstack.edx',
+            'host': 'elasticsearch710.devstack.edx',
             'port': 9200
         }
     ]
