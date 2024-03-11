@@ -15,7 +15,6 @@ def plugin_settings(settings):
         "url_stub": "x.com/",
         "example": "https://www.x.com/username"
     }
-    settings.SOCIAL_MEDIA_FOOTER_ACE_URLS["twitter"] = "https://x.com/edXOnline"
     # ================================================== Overrides ================================================== #
     settings.OVERRIDE_GET_USER_COUNT = "oex_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count"
     settings.OVERRIDE_GET_NAME_VALIDATION_ERROR = (

@@ -17,6 +17,7 @@ Unreleased
 Fixed
 =====
 
+* Fix settings override for social media links in the email footer. Settings should be defined in the deployment instead `RGOeX-26461 <https://youtrack.raccoongang.com/issue/RGOeX-26461>`_
 * MFEs' POST requests CSRF failures `RGOeX-26352 <https://youtrack.raccoongang.com/issue/RGOeX-26352>`_
 
 Changed
