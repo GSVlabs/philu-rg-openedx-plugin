@@ -14,6 +14,13 @@ Change Log
 Unreleased
 **********
 
+[1.2.0] - 2024-03-13
+********************
+
+Added
+=====
+* Django 4 support [RGOeX-26348]
+
 Fixed
 =====
 
