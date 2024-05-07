@@ -111,7 +111,7 @@ setup(
     author_email='info@raccoongang.com',
     url='https://gitlab.com/openedx/openedx-rg-plugin',
     packages=find_packages(
-        include=['oex_plugin', 'edx_info_pages'],
+        include=['oex_plugin', 'edx_info_pages', 'custom_fields', 'onboarding'],
         exclude=["*tests"],
     ),
 
@@ -134,7 +134,9 @@ setup(
     entry_points={
         "lms.djangoapp": [
             "oex_plugin = oex_plugin.apps:OexPluginConfig",
-            "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig"
+            "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig",
+            "custom_fields = custom_fields.apps:CustomFieldsConfig",
+            "onboarding = onboarding.apps:OnboardingConfig",
         ],
         "cms.djangoapp": [
             "oex_plugin = oex_plugin.apps:OexPluginConfig",

@@ -6,7 +6,7 @@
 #
 asgiref==3.7.2
     # via django
-django==3.2.21
+# django==3.2.21
     # via
     #   -c https://raw.githubusercontent.com/openedx/edx-platform/open-release/palm.master/requirements/common_constraints.txt
     #   -r requirements/base.in
@@ -18,3 +18,5 @@ sqlparse==0.4.4
     # via django
 typing-extensions==4.8.0
     # via asgiref
+
+django-multiselectfield==0.1.12
