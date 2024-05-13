@@ -11,8 +11,8 @@ from model_utils.models import TimeStampedModel
 from multiselectfield import MultiSelectField
 from pytz import utc
 
-from .choices import *
-from .constants import (
+from onboarding.choices import *
+from onboarding.constants import (
     NOT_INTERESTED_KEY,
     NOT_INTERESTED_VAL,
     ORG_PARTNERSHIP_END_DATE_PLACEHOLDER,

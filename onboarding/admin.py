@@ -1,11 +1,6 @@
 from django.contrib import admin
 
-
-# import handlers to make sure that they are executed
-# from . import handlers
-
-
-from .models import (
+from onboarding.models import (
     Currency,
     Education,
     EducationLevel,
