@@ -13,12 +13,7 @@ def plugin_settings(settings):
     """
     common_production_settings(settings)
 
-    settings.ENABLE_COMPREHENSIVE_THEMING = True
-    settings.COMPREHENSIVE_THEME_DIRS = [
-        "/edx/app/edx-themes/"
-    ]
     settings.COURSE_ABOUT_VISIBILITY_PERMISSION = 'see_about_page'
-    settings.DEFAULT_SITE_THEME = 'edx-theme'
     settings.TEMPLATES[1]["DIRS"] = _make_mako_template_dirs
     settings.ELASTIC_SEARCH_CONFIG = [
         {
