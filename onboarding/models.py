@@ -279,6 +279,9 @@ class Organization(TimeStampedModel):
 
     def __unicode__(self):
         return self.label
+    
+    def __str__(self):
+        return self.label
 
 
 class OrganizationPartner(models.Model):
