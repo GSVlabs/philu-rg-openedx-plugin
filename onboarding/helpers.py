@@ -19,9 +19,19 @@ log = getLogger(__name__)
 
 
 def get_country_name(country_code):
+    """
+    Returns the country name for a given ISO 3166-1 alpha-2 country code.
+
+    Args:
+        country_code (str): The ISO 3166-1 alpha-2 country code.
+
+    Returns (str):
+        The name of the country or an empty string if the country code is invalid.
+    """
     try:
         return pycountry.countries.get(alpha_2=country_code).name
     except AttributeError:
+        log.exception(f"Can't resolve the {country_code!r} country code into the country name.")
         return ''
 
 

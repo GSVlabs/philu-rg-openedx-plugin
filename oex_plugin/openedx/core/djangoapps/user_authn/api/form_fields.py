@@ -15,9 +15,7 @@ def add_organization_type_field(original_func, is_field_required=False):
     # the user's highest completed organization type.
     organization_type_label = _("- Select -")
     description = _("Please select the type of organization that you work for.")
-
-    # pylint: disable=translation-of-non-string
-    options = [(os.code, _(os.label)) for os in OrgSector.objects.all()]
+    options = [(type_org.code, _(type_org.label)) for type_org in OrgSector.objects.all()]
 
     return {
         'name': 'organization_type',
@@ -38,8 +36,6 @@ def add_is_organization_registered_field(original_func, is_field_required=False)
     # is organization registered.
     is_organization_registered_label = _("- Select -")
     description = _("Is your organization registered as a 501c3?")
-
-    # pylint: disable=translation-of-non-string
     options = [(is_reg, _(is_reg)) for is_reg in ("Yes", "No", "I don't know")]
 
     return {
@@ -61,12 +57,10 @@ def add_organization_size_field(original_func, is_field_required=False):
     # is organization size.
     organization_size_label = _("- Select -")
     description = _("Please select the number of employees in your organization.")
-
-    # pylint: disable=translation-of-non-string
     options = [(total_empl.code, _(total_empl.label)) for total_empl in TotalEmployee.objects.all()]
 
     if settings.ENABLE_COPPA_COMPLIANCE:
-        options = list(filter(lambda op: op[0] != 'el', options))
+        options = list(filter(lambda option: option[0] != 'el', options))
 
     return {
         'name': 'organization_size',
