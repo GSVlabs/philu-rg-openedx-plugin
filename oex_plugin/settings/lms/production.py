@@ -23,3 +23,6 @@ def plugin_settings(settings):
     settings.OVERRIDE_GET_USERNAME_FOR_SOCIAL_LINK = (
         "oex_plugin.openedx.core.djangoapps.user_api.accounts.utils.get_username_from_social_link"
     )
+    settings.OVERRIDE_SEND_COURSE_EMAIL = (
+        "oex_plugin.lms.djangoapps.bulk_email.tasks._send_course_email"
+    )

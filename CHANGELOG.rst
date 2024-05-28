@@ -14,6 +14,11 @@ Change Log
 Unreleased
 **********
 
+Fixed
+=====
+
+* Fix incorrect logo for bulk email `PhU-261 <https://youtrack.raccoongang.com/issue/PhU-261>`_
+
 [1.2.0] - 2024-03-13
 ********************
 
