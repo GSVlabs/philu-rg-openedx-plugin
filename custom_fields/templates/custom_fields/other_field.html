@@ -1,6 +1,6 @@
 <label>
     <input class="other_choice" type="{{ widget.type }}" name="{{ widget.name }}" value="other_selected"
-           onclick=document.querySelector('.other_text[name={{ widget.name }}]').disabled=!this.checked;
+            onclick=document.querySelector('.other_text[name={{ widget.name|escapejs }}]').disabled =! this.checked;
             {%  if widget.selected %}
                 checked
             {% endif %}

@@ -14,6 +14,10 @@ Change Log
 Unreleased
 **********
 
+Added
+=====
+* Changes for the Welcome Form [PhU-231]
+
 [1.2.0] - 2024-03-13
 ********************
 

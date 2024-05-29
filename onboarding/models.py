@@ -277,7 +277,7 @@ class Organization(TimeStampedModel):
         focus_area = FocusArea.get_map().get(self.focus_area, "")
         return org_label, org_type, focus_area
 
-    def __unicode__(self):
+    def __str__(self):
         return self.label
 
 
@@ -290,7 +290,7 @@ class OrganizationPartner(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s - %s" % (self.organization, self.partner)
 
     @classmethod
@@ -388,8 +388,12 @@ class OrganizationAdminHashKeys(TimeStampedModel):
         """
         Link a hash key to a user for administrator role confirmation
         """
-        return cls.objects.create(organization=organization, suggested_by=suggested_by,
-                                  suggested_admin_email=suggested_admin_email, activation_hash=uuid.uuid4().hex)
+        return cls.objects.create(
+            organization=organization,
+            suggested_by=suggested_by,
+            suggested_admin_email=suggested_admin_email,
+            activation_hash=uuid.uuid4().hex
+        )
 
 
 class UserExtendedProfile(TimeStampedModel):
@@ -612,7 +616,7 @@ class OrganizationMetricUpdatePrompt(models.Model):
     # False:  learner clicked `No Thanks`
     remind_me_later = models.BooleanField(null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '{}, {}'.format(self.responsible_user.username, self.org.label.encode('utf-8'))
 
 
@@ -641,7 +645,7 @@ class Education(TimeStampedModel):
     end_month_year = models.DateField(null=True, blank=True)
     description = models.TextField(blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '{} {}'.format(self.school_name, self.degree_name)
 
 
@@ -658,7 +662,7 @@ class Experience(TimeStampedModel):
     company = models.CharField(max_length=255, null=True, blank=True)
     summary = models.TextField(blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -670,5 +674,5 @@ class Skill(TimeStampedModel):
     user = models.ForeignKey(User, related_name='skill', on_delete=models.CASCADE)
     name = models.CharField(max_length=255, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name

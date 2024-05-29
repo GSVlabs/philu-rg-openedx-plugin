@@ -10,7 +10,7 @@ from custom_fields.multiselect_with_other.helpers import (
 class CheckboxSelectMultipleWithOther(CheckboxSelectMultiple):
     """ Implements checkbox widget for MultiSelectWithOther field"""
     other_choice = None
-    other_option_template_name = 'other_field.html'
+    other_option_template_name = 'custom_fields/other_field.html'
 
     def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
         option = super(CheckboxSelectMultipleWithOther, self).create_option(name, value, label, selected, index,
