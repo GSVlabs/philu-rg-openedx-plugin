@@ -14,6 +14,10 @@ Change Log
 Unreleased
 **********
 
+Fixed
+=====
+
+* Fix incorrect logo for bulk email `PhU-261 <https://youtrack.raccoongang.com/issue/PhU-261>`_
 Added
 =====
 * Changes for the Welcome Form [PhU-231]
