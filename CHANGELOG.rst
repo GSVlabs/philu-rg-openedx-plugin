@@ -16,11 +16,12 @@ Unreleased
 
 Fixed
 =====
-
 * Fix incorrect logo for bulk email `PhU-261 <https://youtrack.raccoongang.com/issue/PhU-261>`_
+
 Added
 =====
-* Changes for the Welcome Form [PhU-231]
+* Extend the Account-related fields `PhU-295 <https://youtrack.raccoongang.com/issue/PhU-295>`_
+* Changes for the Welcome Form `PhU-231 <https://youtrack.raccoongang.com/issue/PhU-231>`_
 
 [1.2.0] - 2024-03-13
 ********************
