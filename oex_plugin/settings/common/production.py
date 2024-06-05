@@ -39,9 +39,30 @@ def plugin_settings(settings):
     settings.OVERRIDE_GET_NAME_VALIDATION_ERROR = (
         'oex_plugin.openedx.core.djangoapps.user_api.accounts.api.get_name_validation_error'
     )
-    settings.OVERRIDE_GET_USER_COUNT = 'oex_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count'
-    settings.OVERRIDE_CREATE_ACCOUNT = 'oex_plugin.openedx.core.djangoapps.user_authn.views.register._create_account'
-    settings.OVERRIDE_FIELD_CAN_BE_SAVED = 'oex_plugin.openedx.core.djangoapps.user_authn.api.helper._field_can_be_saved'
-    settings.OVERRIDE_ADD_ORG_TYPE_FIELD = 'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_organization_type_field'
-    settings.OVERRIDE_ADD_IS_ORG_REGISTERED_FIELD = 'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_is_organization_registered_field'
-    settings.OVERRIDE_ADD_ORG_SIZE_FIELD = 'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_organization_size_field'
+    settings.OVERRIDE_GET_USER_COUNT = (
+        'oex_plugin.lms.djangoapps.grades.rest_api.v1.gradebook_view._get_user_count'
+    )
+    settings.OVERRIDE_CREATE_ACCOUNT = (
+        'oex_plugin.openedx.core.djangoapps.user_authn.views.register._create_account'
+    )
+    settings.OVERRIDE_FIELD_CAN_BE_SAVED = (
+        'oex_plugin.openedx.core.djangoapps.user_authn.api.helper._field_can_be_saved'
+    )
+    settings.OVERRIDE_ADD_ORG_TYPE_FIELD = (
+        'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_organization_type_field'
+    )
+    settings.OVERRIDE_ADD_IS_ORG_REGISTERED_FIELD = (
+        'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_is_organization_registered_field'
+    )
+    settings.OVERRIDE_ADD_ORG_SIZE_FIELD = (
+        'oex_plugin.openedx.core.djangoapps.user_authn.api.form_fields.add_organization_size_field'
+    )
+    settings.OVERRIDE_TO_REPRESENTATION_USER_ACCOUNT = (
+        'oex_plugin.openedx.core.djangoapps.user_api.accounts.serializers.to_representation'
+    )
+    settings.OVERRIDE_UPDATE_ACCOUNT_SETTINGS = (
+        'oex_plugin.openedx.core.djangoapps.user_api.accounts.api.update_account_settings'
+    )
+    settings.OVERRIDE_ACCOUNT_RETRIEVE = (
+        'oex_plugin.openedx.core.djangoapps.user_api.accounts.views.retrieve'
+    )
