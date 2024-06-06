@@ -134,7 +134,8 @@ setup(
     entry_points={
         "lms.djangoapp": [
             "oex_plugin = oex_plugin.apps:OexPluginConfig",
-            "edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig",
+            # Temporary commented due to migration mysql error
+            #"edx_info_pages = edx_info_pages.apps:EdxInfoPagesConfig",
             "custom_fields = custom_fields.apps:CustomFieldsConfig",
             "onboarding = onboarding.apps:OnboardingConfig",
         ],
