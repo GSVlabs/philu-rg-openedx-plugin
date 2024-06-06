@@ -422,12 +422,12 @@ class UserExtendedProfile(TimeStampedModel):
 
     hear_about_philanthropyu = MultiSelectWithOtherField(
         choices=HEAR_ABOUT_PHILANTHROPY,
-        other_max_length=255,
+        other_max_length=490,
         max_choices=1,
         blank=True
     )
-    function_areas = MultiSelectField(choices=FUNCTIONS, max_length=255, blank=True)
-    interests = MultiSelectField(choices=INTERESTS, max_length=255, blank=True)
+    function_areas = MultiSelectField(choices=FUNCTIONS, max_length=270, blank=True)
+    interests = MultiSelectField(choices=INTERESTS, max_length=270, blank=True)
     learners_related = MultiSelectField(choices=INTERESTED_LEARNERS, max_length=255, blank=True)
     goals = MultiSelectField(choices=GOALS, blank=True, max_length=255)
     hubspot_contact_id = models.CharField(max_length=20, null=True)
