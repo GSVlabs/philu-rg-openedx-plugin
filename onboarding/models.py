@@ -225,6 +225,18 @@ class Organization(TimeStampedModel):
     # this flag will be True
     has_affiliated_partner = models.BooleanField(default=False)
 
+    def get_required_fields_for_account(self):
+        """
+        Returns a dictionary of the required Org fields.
+        """
+        return {
+            'id': self.id,
+            'label': self.label,
+            'org_type': self.org_type,
+            'total_employees': self.total_employees,
+            'is_org_registered': self.is_organization_registered
+        }
+
     def users_count(self):
         """
         :return: Users count in an organization

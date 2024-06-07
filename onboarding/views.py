@@ -40,6 +40,8 @@ def organization(request):
     organization = get_object_or_404(Organization, id=organization_id)
 
     context = {
+        'organization_id': organization.id,
+        'organization_label': organization.label,
         'organization_type': organization.org_type,
         'organization_size': organization.total_employees,
         'is_organization_registered': organization.is_organization_registered,
