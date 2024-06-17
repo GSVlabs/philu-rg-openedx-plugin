@@ -82,6 +82,7 @@ def to_representation(original_func, self, user):  # lint-amnesty, pylint: disab
         "verified_name": None,
         # Start of override
         "english_proficiency": None,
+        "organization": None,
         # End of override
     }
 
@@ -118,6 +119,8 @@ def to_representation(original_func, self, user):  # lint-amnesty, pylint: disab
     try:
         user_extended_profile = user.extended_profile
         data.update({"english_proficiency": user_extended_profile.english_proficiency})
+        if user_org := user_extended_profile.organization:
+            data.update({"organization": user_org.get_required_fields_for_account()})
     except AttributeError:
         pass
     # End of override

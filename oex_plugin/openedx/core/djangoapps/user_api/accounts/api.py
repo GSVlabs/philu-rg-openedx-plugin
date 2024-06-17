@@ -4,6 +4,7 @@ Module for platform overrides.
 
 from django.utils.translation import gettext_lazy as _
 
+from onboarding.models import Organization
 from openedx.core.djangoapps.user_api import errors
 from openedx.core.djangoapps.user_api.accounts.api import (
     _get_old_language_proficiencies_if_updating,
@@ -124,4 +125,18 @@ def _update_additional_extended_profile_fields_if_needed(data, user):
     """
     if 'english_proficiency' in data:
         user.extended_profile.english_proficiency = data['english_proficiency']
-        user.extended_profile.save()
+    if 'organization' in data:
+        if org_data := data['organization']:
+            org_label = org_data.get('org_label')
+            try:
+                organization = Organization.objects.get(label__iexact=org_label)
+            except Organization.DoesNotExist:
+                organization = Organization(label=org_label)
+            organization.org_type = org_data.get('org_type')
+            organization.is_organization_registered = org_data.get('is_org_registered')
+            organization.total_employees = org_data.get('total_employees')
+            organization.save()
+            user.extended_profile.organization = organization
+        else:
+            user.extended_profile.organization = None
+    user.extended_profile.save()
