@@ -126,8 +126,7 @@ def _update_additional_extended_profile_fields_if_needed(data, user):
     if 'english_proficiency' in data:
         user.extended_profile.english_proficiency = data['english_proficiency']
     if 'organization' in data:
-        if org_data := data['organization']:
-            org_label = org_data.get('org_label')
+        if (org_data := data['organization']) and (org_label := org_data.get('org_label')):
             try:
                 organization = Organization.objects.get(label__iexact=org_label)
             except Organization.DoesNotExist:
