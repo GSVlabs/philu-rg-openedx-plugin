@@ -36,7 +36,7 @@ def add_is_organization_registered_field(original_func, is_field_required=False)
     # is organization registered.
     is_organization_registered_label = _("- Select -")
     description = _("Is your organization registered as a 501c3?")
-    options = [(is_reg, _(is_reg)) for is_reg in ("Yes", "No", "I don't know")]
+    options = [(is_reg, _(is_reg.capitalize())) for is_reg in ("Yes", "No", "I don't Know")]
 
     return {
         'name': 'is_organization_registered',

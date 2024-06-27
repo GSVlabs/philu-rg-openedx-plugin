@@ -27,7 +27,7 @@ def retrieve(original_func, self, request, username):
     ]
     total_employee_options = TotalEmployee.objects.get_choices()
     org_type_options = OrgSector.objects.get_choices()
-    is_org_registered_options = [(is_reg, _(is_reg)) for is_reg in ("Yes", "No", "I don't know")]
+    is_org_registered_options = [(is_reg, _(is_reg.capitalize())) for is_reg in ("Yes", "No", "I don't Know")]
 
     account_settings[0].update({
         'english_proficiency_options': english_proficiency_options,
