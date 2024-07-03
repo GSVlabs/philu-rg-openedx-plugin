@@ -104,6 +104,7 @@ def update_account_settings(original_func, requesting_user, update, username=Non
         _update_extended_profile_if_needed(update, user_profile)
         _update_state_if_needed(update, user_profile)
         # Start of override
+        _user_profile_language_update_if_needed(update, user_profile)
         _update_additional_extended_profile_fields_if_needed(update, user)
         # End of override
 
@@ -117,6 +118,12 @@ def update_account_settings(original_func, requesting_user, update, username=Non
         )
 
     _send_email_change_requests_if_needed(update, user)
+
+
+def _user_profile_language_update_if_needed(data, user_profile):
+    if 'language_proficiencies' in data and data['language_proficiencies'] == []:
+        user_profile.language = ""
+        user_profile.save()
 
 
 def _update_additional_extended_profile_fields_if_needed(data, user):

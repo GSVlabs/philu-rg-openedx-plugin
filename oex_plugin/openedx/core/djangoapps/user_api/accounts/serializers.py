@@ -1,5 +1,7 @@
+from collections import OrderedDict
 import logging
 
+from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.urls import reverse
 
@@ -27,7 +29,8 @@ def to_representation(original_func, self, user):  # lint-amnesty, pylint: disab
     :return: Dict serialized account
     
     Override description:
-        Adding 'english_proficiency' field for account extension.
+        1. Adding 'english_proficiency' field for account extension.
+        2. Use the `profile.language` as a fallback value for the "Native language" field.
     """
     try:
         user_profile = user.profile
@@ -87,6 +90,11 @@ def to_representation(original_func, self, user):  # lint-amnesty, pylint: disab
     }
 
     if user_profile:
+        language_proficiencies = LanguageProficiencySerializer(
+            user_profile.language_proficiencies.all().order_by('code'), many=True
+        ).data or [
+            OrderedDict([('code', lang[0])]) for lang in settings.ALL_LANGUAGES if user_profile.language == lang[1]
+        ]
         data.update(
             {
                 "bio": AccountLegacyProfileSerializer.convert_empty_to_None(user_profile.bio),
@@ -95,9 +103,7 @@ def to_representation(original_func, self, user):  # lint-amnesty, pylint: disab
                 "profile_image": AccountLegacyProfileSerializer.get_profile_image(
                     user_profile, user, self.context.get('request')
                 ),
-                "language_proficiencies": LanguageProficiencySerializer(
-                    user_profile.language_proficiencies.all().order_by('code'), many=True
-                ).data,
+                "language_proficiencies": language_proficiencies,
                 "name": user_profile.name,
                 "gender": AccountLegacyProfileSerializer.convert_empty_to_None(user_profile.gender),
                 "goals": user_profile.goals,
